@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const apiUrl = 'http://localhost:8080/product';
+        const apiUrl = 'https://backend12-kg4x.onrender.com/product';
       // console.log('Fetching data from:', apiUrl);
         const res = await fetch(apiUrl);
         
