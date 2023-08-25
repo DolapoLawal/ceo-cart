@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { useSelector } from 'react-redux';
 import HomeCard from '../component/HomeCard';
 import CardFeature from '../component/CardFeature';

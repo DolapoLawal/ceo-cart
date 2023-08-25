@@ -24,7 +24,7 @@ const CardFeature = ({image,name,price,category,loading,id}) => {
            <>
            <Link to={`/products/${id}`} onClick={()=>window.scrollTo({top:"0",behavior : "smooth"})}>
           <div className='h-28 '>
-            <img src={image} className='h-full'/>
+            <img src={image} className='h-full' alt='' />
         </div>
         <h1 className='font-semibold text-slate-600 text-center capitalize text-lg mt-4 whitespace-nowrap overflow-hidden'>{name}</h1>
       <p className='text-center text-slate-500 font-medium '>{category}</p>

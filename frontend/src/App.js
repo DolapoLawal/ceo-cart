@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import './App.css';
 import { Header } from './component/Header';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import { setDataProduct } from './redux/productSlide';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
 
@@ -12,22 +12,14 @@ import { useEffect } from 'react';
 
 function App() {
   const dispatch = useDispatch()
-  const productData = useSelector((state)=>state.product)
+  // const productData = useSelector((state)=>state.product)
 
-  // useEffect(()=>{
-  // (async()=>{
-  //   const res = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/product`)
-  //   console.log(productData)
-  //   const resData = await res.json()
-  //   console.log(resData)
-  //   dispatch(setDataProduct(resData))
-  // })()
-  // },[])
-// console.log(productData)
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_SERVER_DOMAIN}/product`);
+        const apiUrl = 'http://localhost:8080/product';
+      // console.log('Fetching data from:', apiUrl);
+        const res = await fetch(apiUrl);
         
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
@@ -41,7 +33,7 @@ function App() {
         console.error("Fetch error:", error);
       }
     })();
-  }, []);
+  }, [ dispatch ]);
 
   // console.log(productData)
   
